@@ -31,10 +31,11 @@ pipeline {
                 sh '''
                    #!/bin/bash
                    ssh -i /home/jenkins/eu-west-1-personal.pem -o StrictHostKeyChecking=no ubuntu@54.78.97.167 << EOF
-                   docker-compose -f /home/ubuntu/API2/docker-compose.yaml down
+		   git clone https://github.com/ToaoMCL/JenkinsProjectPipeline2/tree/main
+                   docker-compose -f /home/ubuntu/JenkinsProjectPipeline2/docker-compose.yaml down
                    docker system prune -af
-                   docker-compose -f /home/ubuntu/API2/docker-compose.yaml up -d
-                   sudo rm -R /home/ubuntu/API2
+                   docker-compose -f /home/ubuntu/JenkinsProjectPipeline2/docker-compose.yaml up -d
+                   sudo rm -R /home/ubuntu/JenkinsProjectPipeline2
                    << EOF
                 '''
             }
