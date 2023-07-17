@@ -31,7 +31,7 @@ pipeline {
                 sh '''
                    #!/bin/bash
                    ssh -i /home/jenkins/eu-west-1-personal.pem -o StrictHostKeyChecking=no ubuntu@54.78.97.167 << EOF
-		   git clone https://github.com/ToaoMCL/JenkinsProjectPipeline2/tree/main
+		   git clone https://github.com/ToaoMCL/JenkinsProjectPipeline2
                    docker-compose -f /home/ubuntu/JenkinsProjectPipeline2/docker-compose.yaml down
                    docker system prune -af
                    docker-compose -f /home/ubuntu/JenkinsProjectPipeline2/docker-compose.yaml up -d
